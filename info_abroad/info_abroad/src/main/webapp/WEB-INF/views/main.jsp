@@ -67,7 +67,7 @@
  	
   	.menu {position:absolute;top:5%;left:92%;transform:translate(-50%,-50%);}
 	input[id="menuicon"] {display:none;}
-	input[id="menuicon"] + label {display:block;width:40px;height:30px;position:relative;cursor:pointer;}
+	input[id="menuicon"] + label {display:block;width:50px;height:40px;position:relative;cursor:pointer;}
 	input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:5px;border-radius:30px;background:#000;transition:all .35s;}
 	input[id="menuicon"] + label span:nth-child(1) {top:0;}
 	input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);} /* ����ϰ� ����� �� �ִ� style top:calc(50% - 2.5px); margin-top:-2.5px;*/
