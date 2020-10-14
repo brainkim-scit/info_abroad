@@ -10,7 +10,7 @@
 	@font-face {
 		font-family: basic;
 		src: url("resources/fonts/Jua.ttf");
-	}
+	}	
 	html, body {
        height: 100%;
        margin: 0;
