@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>
-		<typeAlias type="com.mynameis.first.vo.myMemberVO" alias="member"/>
-	</typeAliases>
-	<mappers>
-		<mapper resource="mapper/myMemberMapper.xml" />
-	</mappers>
+<!-- 	<typeAliases> -->
+<!-- 		<typeAlias type="com.mynameis.first.vo.myMemberVO" alias="member"/> -->
+<!-- 	</typeAliases> -->
+<!-- 	<mappers> -->
+<!-- 		<mapper resource="mapper/myMemberMapper.xml" /> -->
+<!-- 	</mappers> -->
 </configuration>
