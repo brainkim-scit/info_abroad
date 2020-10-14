@@ -34,7 +34,7 @@
 	.body > div{
 		width: 100%;
 		height: 100%;
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 	.body > div > div{
 		padding: 2% 2% 2% 2%;
@@ -54,13 +54,13 @@
 <script src="resources/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function(){
-		testAPI();
+		incruit();
 	})
 	
-	function testAPI(){
+	function incruit(){
 		$.ajax({
 			method : 'GET',
-			url : 'test',
+			url : 'incruit_status',
 			dataType : 'XML',
 			success : function(data){
 				var item = '';
