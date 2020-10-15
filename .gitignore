@@ -1,7 +1,7 @@
 target
 .settings
 .classpath
-apiContoller.java
+src/main/java/com/project/info_abroad/util
 *.class
 *.properties
 *.jar
