@@ -1,0 +1,10 @@
+*/target/*
+.settings
+.classpath
+apiContoller.java
+*.class
+*.properties
+*.jar
+.project
+.springBeans
+.factorypath
