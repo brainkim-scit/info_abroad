@@ -1,2 +1,10 @@
-apiController.java
-db.properties
+target
+.settings
+.classpath
+src/main/java/com/project/info_abroad/util
+*.class
+*.properties
+*.jar
+.project
+.springBeans
+.factorypath
