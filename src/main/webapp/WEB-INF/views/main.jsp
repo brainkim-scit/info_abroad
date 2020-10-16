@@ -30,13 +30,35 @@
  		text-decoration: none;
 		-webkit-tap-highlight-color : rgba(0,0,0,0); 		
  	}
+ 	
+ 	.nation{
+ 		margin: 9px 9px;
+	    border-radius: 5px;
+ 		width: 90px;
+ 		height: 60px;
+ 		display: inline-block;
+ 		background-color: white;
+ 	}
+ 	img{
+ 		opacity: 1;
+ 		transition-duration: 1s;
+		transition-timing-function: ease-out;
+	    border-radius: 5px;
+	    box-shadow: 3px 5px 5px 0px;
+ 		width: 90px;
+ 		height: 60px;
+ 	}
+ 	
+ 	img:hover {
+		opacity: 0.5;
+		transition: background 1s ease-out;
+	}
 	
 	.wrapper{
 		height: 100%;
 		width: 100%;
 	}
 	.header{
-		background-color: rgb(209 243 92 / 21%);
 		border: solid 5px black;
     	box-sizing: border-box;
 		height: 10%;
@@ -48,24 +70,26 @@
 		height: 80%;
 		width: 100%;
 		text-align: center;
-		background-color: #ff00001f;
-		border-radius: 10px;
+		border: solid 12px white;
+    	border-radius: 26px;
+		padding: 15px;
+    	box-sizing: border-box;
+    	overflow-y: scroll;
+    	background-image: url("resources/img/background_default.jpg");
+    	background-size: 100% auto;
+    	background-repeat: no-repeat;
 	}
-	.body > div{
-		width: 100%;
-		height: 100%;
-		overflow-y: scroll;
+	.body::-webkit-scrollbar {
+	    display: none;
 	}
-	.body > div > a > div{
-		padding: 2% 2% 2% 2%;
-		width: 94%;
-		border: solid 1px black;
-		margin: 1% auto;
-		border-radius: 10px;
-		text-align: left;
+	@media screen and (max-width: 768px){
+		.body{
+			background-image: url("resources/img/background.jpg");
+	    	background-size: 100% auto;
+	    	background-repeat: no-repeat;
+		}
 	}
 	.footer{
-		background-color: rgb(209 243 92 / 21%);
 		border: solid 5px black;
     	box-sizing: border-box;
 		height: 10%;
@@ -91,9 +115,11 @@
 	
 </style>
 <script src="resources/js/jquery.js"></script>
+<script src="resources/js/api.js"></script>
 <script type="text/javascript">
 	let pageno = 1;
 	$(function(){
+		nations();
 	})
 </script>
 </head>
@@ -111,8 +137,6 @@
 			</div>
 		</div>
 		<div class="body">
-			<div style="">
-			</div>
 		</div>
 		<div class="footer">
 			<h1 style="display: inline-block;">footer</h1>

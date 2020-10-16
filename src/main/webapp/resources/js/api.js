@@ -1,5 +1,5 @@
 
-	function incruit(){
+	function incruit(pageNo, code){
 		$.ajax({
 			method : 'GET',
 			url : 'incruit_status',
@@ -28,7 +28,7 @@
 		})
 	}
 	
-	function statistics(){
+	function statistics(type, code, year){
 		$.ajax({
 			method : 'GET',
 			url : 'statistics',
@@ -42,7 +42,7 @@
 		})
 	}
 	
-	function corona(){
+	function corona(pageNo){
 		$.ajax({
 			method : 'GET',
 			url : 'corona_abroad',
@@ -55,6 +55,70 @@
 			}
 		})
 	}
+	
+		function news(pageNo, country){
+			$.ajax({
+				method : 'GET',
+				url : 'news_abroad',
+				dataType : 'json',
+				success : function(data){
+					console.log(data.response.body.items);
+				},
+				error : function(e){
+					console.log(e);
+				}
+			})
+		}
+	
+		function nations(){
+			$.ajax({
+				method : 'GET',
+				url : 'about_nation',
+				dataType : 'json',
+				success : function(data){
+					var output = '';
+					var items = data.response.body.items.item;
+					console.log(items);
+					$(items).each(function(){
+						output += '<a href="#">';
+						output += '<div class="nation">';
+						output += '<img src="'+this.imgUrl+'" title="'+this.countryName+'"></div></a>';
+					})
+					$('.body').append(output);
+				},
+				error : function(e){
+					console.log(e);
+				}
+			})
+		}
+	
+		function contacts(pageNo, country){
+			$.ajax({
+				method : 'GET',
+				url : 'contact_abroad',
+				dataType : 'json',
+				success : function(data){
+					console.log(data.response.body.items);
+				},
+				error : function(e){
+					console.log(e);
+				}
+			})
+		}
+		
+		function airport(){
+			$.ajax({
+				method : 'GET',
+				url : 'status_airport',
+				dataType : 'json',
+				success : function(data){
+					console.log(data.response.body.items);
+				},
+				error : function(e){
+					console.log(e);
+				}
+			})
+		}
 	
 	function page(){
 		$('.body > div').on('scroll', function(e){
