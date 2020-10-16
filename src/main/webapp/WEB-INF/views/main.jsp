@@ -36,7 +36,9 @@
 		width: 100%;
 	}
 	.header{
-		background-color: rgb(228, 243, 92);
+		background-color: rgb(209 243 92 / 21%);
+		border: solid 5px black;
+    	box-sizing: border-box;
 		height: 10%;
 		width: 100%;
 		text-align: center;
@@ -46,7 +48,7 @@
 		height: 80%;
 		width: 100%;
 		text-align: center;
-		background-color: orange;
+		background-color: #ff00001f;
 		border-radius: 10px;
 	}
 	.body > div{
@@ -63,7 +65,9 @@
 		text-align: left;
 	}
 	.footer{
-		background-color: pink;
+		background-color: rgb(209 243 92 / 21%);
+		border: solid 5px black;
+    	box-sizing: border-box;
 		height: 10%;
 		width: 100%;
 		text-align: center;
@@ -90,81 +94,7 @@
 <script type="text/javascript">
 	let pageno = 1;
 	$(function(){
-		incruit();
-		statistics();
-		corona();
-		page();
 	})
-	
-	function incruit(){
-		$.ajax({
-			method : 'GET',
-			url : 'incruit_status',
-			data : {pageNo : pageno},
-			dataType : 'XML',
-			success : function(data){
-				var item = '';
-				$(data).find('ITEM').each(function(){
-					item += '<a href="'+$('linkUrl',this).text()+'">'
-					item += '<div>';
-					item += '채용공고<br>'+$('rctntcSj',this).text()+'<br>';
-					item += '신청자격<br><div style="overflow:hidden; white-space: nowrap; text-overflow:ellipsis;">'+$('rctntcSprtQualfCn',this).text()+'</div>';
-					item += '국가 : '+$('dsptcNationScd',this).text()+'<br>';
-					item += '분야 : '+$('dsptcKsco',this).text()+'<br>';
-					item += '경력 : '+$('joDemandCareerStleScd',this).text()+'<br>';
-					item += '학력 : '+$('joDemandAcdmcrScd',this).text();
-					item += '마감일 : '+$('rctntcEndDay',this).text();
-					item += '</div>';
-					item += '</a>'
-				})
-				$('.body > div').append(item);
-			},
-			error : function(e){
-				console.log(e);
-			}
-		})
-	}
-	
-	function statistics(){
-		$.ajax({
-			method : 'GET',
-			url : 'statistics',
-			dataType : 'XML',
-			success : function(data){
-				console.log(data);
-			},
-			error : function(e){
-				console.log(e);
-			}
-		})
-	}
-	
-	function corona(){
-		$.ajax({
-			method : 'GET',
-			url : 'corona_abroad',
-			dataType : 'json',
-			success : function(data){
-				console.log(data.response.body.items);
-			},
-			error : function(e){
-				console.log(e);
-			}
-		})
-	}
-	
-	function page(){
-		$('.body > div').on('scroll', function(e){
-	        var scrollTop = e.target.scrollTop;
-	        var clientHeight = e.target.clientHeight;
-	        var scrollHeight = e.target.scrollHeight;
-	        
-	        if (scrollTop + clientHeight >= scrollHeight) {
-	        	pageno += 1;
-	        	incruit();
-	        }
-		});
-	}
 </script>
 </head>
 <body>
