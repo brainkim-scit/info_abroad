@@ -85,6 +85,9 @@
 						output += '<img src="'+this.imgUrl+'" title="'+this.countryName+'"></div></a>';
 					})
 					$('.body').append(output);
+					$('.nation > img').on('click',function(){
+						alert($(this).attr('title'));
+					})
 				},
 				error : function(e){
 					console.log(e);
