@@ -8,3 +8,14 @@ src/main/java/com/project/info_abroad/util
 .project
 .springBeans
 .factorypath
+
+
+
+
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
