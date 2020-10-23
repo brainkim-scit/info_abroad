@@ -1,3 +1,4 @@
+
 target
 .settings
 .classpath
@@ -9,13 +10,35 @@ src/main/java/com/project/info_abroad/util
 .springBeans
 .factorypath
 
+# 실행파일 제외
+*.dll
+*.exe
+*.o
+*.so
+*.com
+#*.class
 
+# 로그파일 제외
 
+# 문서파일 제외
+*.xlsx
+*.xls
+*.pdf
+*.docs
+*.ppt
+*.pptx
 
+# 패키지 파일 제외
+*.dmg
+*.iso
+*.tar
+*.zip
+*.gz
 
-# vscode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# OS용 시스템 파일 제외
+.Trashes
+.Thumbs.db
+.ehthumbs.db
+
+# VSCode 제외 파일
+.vscode

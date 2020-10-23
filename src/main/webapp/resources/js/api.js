@@ -71,6 +71,7 @@
 		}
 	
 		function nations(){
+		var check = [];
 			$.ajax({
 				method : 'GET',
 				url : 'about_nation',
@@ -80,10 +81,14 @@
 					var items = data.response.body.items.item;
 					console.log(items);
 					$(items).each(function(){
+						check.push(this.continent);
 						output += '<a href="#">';
 						output += '<div class="nation">';
 						output += '<img src="'+this.imgUrl+'" title="'+this.countryName+'"></div></a>';
 					})
+
+				console.log(check.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]));
+
 					$('.body').append(output);
 					$('.nation > img').on('click',function(){
 						alert($(this).attr('title'));
